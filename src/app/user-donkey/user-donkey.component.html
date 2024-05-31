@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h3>Adoptions List</h3>
+  </div>
+  <div class="card-body">
+    <div class="list-group">
+      <div *ngFor="let donkey of adoptedDonkeys"
+           class="list-group-item d-flex align-items-center"
+           (mouseover)="toggleDetails(donkey, true)"
+           (mouseout)="toggleDetails(donkey, false)">
+        <div *ngIf="!donkey.showInfo">
+          <img [src]="donkey.imageUrl" class="img-thumbnail me-2" alt="{{ donkey.name }}">
+        </div>
+        <div *ngIf="donkey.showInfo">
+          <h5>{{ donkey.name }}</h5>
+          <p><strong>Origin:</strong> {{ donkey.origin }}<br>
+             <strong>Birth Date:</strong> {{ donkey.birthDate }}</p>
+        </div>
+        <div>
+          <button class="btn btn-warning btn-sm" (click)="unadoptDonkey(donkey)">Unadopt</button>
+          <button class="btn btn-danger btn-sm" (click)="removeAdoptedDonkey(donkey)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.card {
+  margin: 20px auto;
+  max-width: 600px;
+}
+.img-thumbnail {
+  max-width: 100px;
+  cursor: pointer; /* Ajoute un curseur pointeur pour indiquer l'interactivité */
+}
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: none;
+  transition: background-color 0.3s; /* Ajoute une transition douce pour le changement de fond */
+}
+.list-group-item:hover {
+  background-color: #f0f0f0; /* Change le fond au survol pour un effet visuel */
+}
